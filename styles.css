@@ -518,6 +518,55 @@ footer em {
   line-height: 1.55;
 }
 
+.projects-open-call {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.35rem, 3vw, 2rem);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-open-call::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-green-mid), var(--accent-blue));
+  opacity: 0.95;
+}
+
+.projects-open-call h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2.8vw, 1.6rem);
+}
+
+.projects-open-call > p {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.projects-open-call strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.projects-open-cta {
+  margin: 1.35rem 0 0;
+  max-width: none;
+}
+
+.projects-open-cta .apply-btn {
+  display: inline-block;
+  width: auto;
+}
+
 .text-link {
   color: var(--accent-blue);
   text-decoration: none;

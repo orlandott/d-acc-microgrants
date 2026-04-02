@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply — d/acc microgrants</title>
+  <meta name="description" content="Apply to work on a d/acc microgrants project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Form delivery: replace YOUR_EMAIL with the inbox that should receive applications (FormSubmit.co will ask you to confirm it once). -->
+</head>
+<body>
+  <div class="wrap wrap--narrow">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="apply.html" aria-current="page">Apply</a>
+    </nav>
+
+    <header class="site-header">
+      <h1 class="mark"><a href="index.html">d<span>/</span>acc microgrants</a></h1>
+      <p class="tagline">Application</p>
+    </header>
+
+    <p class="apply-lead">You are applying to work on:</p>
+    <p class="apply-project" id="project-display">Loading…</p>
+
+    <form
+      class="apply-form"
+      action="https://formsubmit.co/YOUR_EMAIL@example.com"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="_subject" id="form-subject" value="d/acc microgrants application">
+      <input type="hidden" name="_next" id="form-next" value="">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="form-field">
+        <label class="form-label" for="field-name">Full name <span class="form-req">*</span></label>
+        <input class="form-input" type="text" name="name" id="field-name" required autocomplete="name">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-email">Email <span class="form-req">*</span></label>
+        <input class="form-input" type="email" name="email" id="field-email" required autocomplete="email">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-project">Project <span class="form-req">*</span></label>
+        <input class="form-input" type="text" name="project" id="field-project" required>
+        <p class="form-hint">Pre-filled when you apply from a project card; you can edit if needed.</p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-resume">Résumé or CV</label>
+        <input class="form-input form-file" type="file" name="attachment" id="field-resume" accept=".pdf,.doc,.docx,.txt,application/pdf">
+        <p class="form-hint">PDF preferred. Optional if you paste a link below.</p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-resume-url">Résumé link (optional)</label>
+        <input class="form-input" type="url" name="resume_url" id="field-resume-url" placeholder="https://…" autocomplete="url">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-background">Your background <span class="form-req">*</span></label>
+        <textarea class="form-textarea" name="background" id="field-background" required rows="6" placeholder="Education, work experience, relevant projects, tools you use, anything that helps us understand how you work."></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-fit">Why you&rsquo;re a good fit <span class="form-req">*</span></label>
+        <textarea class="form-textarea" name="why_fit" id="field-fit" required rows="6" placeholder="What you would build or explore first, how this connects to skills you already have, and what you want to learn from the program."></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="field-links">Links (optional)</label>
+        <textarea class="form-textarea" name="links" id="field-links" rows="3" placeholder="Portfolio, GitHub, LinkedIn, writing samples—one per line is fine."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button class="apply-btn form-submit" type="submit">Submit application</button>
+        <p class="form-footnote">By submitting, you agree we may contact you about this application. We do not sell your data.</p>
+      </div>
+    </form>
+
+    <footer>
+      <p><em>d/acc microgrants</em> — <a href="projects.html" class="text-link">Back to projects</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var raw = params.get("project");
+      var projectInput = document.getElementById("field-project");
+      var subject = document.getElementById("form-subject");
+      var display = document.getElementById("project-display");
+      var next = document.getElementById("form-next");
+
+      if (raw) {
+        var decoded = decodeURIComponent(raw.replace(/\+/g, " "));
+        projectInput.value = decoded;
+        display.textContent = decoded;
+        subject.value = "Application: " + decoded;
+      } else {
+        display.textContent = "General application";
+        projectInput.placeholder = "Which project or direction? (see Projects)";
+        subject.value = "d/acc microgrants application (general)";
+      }
+
+      next.value = new URL("thank-you.html", window.location.href).href;
+    })();
+  </script>
+</body>
+</html>

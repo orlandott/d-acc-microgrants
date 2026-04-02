@@ -9,19 +9,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="images/hero-solarpunk-utopia.jpg" fetchpriority="high">
 </head>
-<body>
-  <div class="wrap">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+<body class="page-home">
+  <header class="hero-shell" role="banner">
+    <img
+      class="hero-bg"
+      src="images/hero-solarpunk-utopia.jpg"
+      width="1280"
+      height="1280"
+      alt="Solarpunk-style vision of a green city: solar panels on rooftops, trees and parks, and light rail—an aspirational sustainable future."
+      decoding="async"
+      fetchpriority="high"
+    >
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="apply.html">Apply</a>
+      </nav>
+      <div class="hero-head">
+        <h1 class="mark">d<span>/</span>acc microgrants</h1>
+        <p class="tagline">An incubator for organizations building civilizational resilience.</p>
+      </div>
+      <p class="hero-credit">
+        Hero image:
+        <a href="https://commons.wikimedia.org/wiki/File:Solarpunk_utopia_with_sustainable_transport.jpg" target="_blank" rel="noopener noreferrer"><em>Solarpunk utopia with sustainable transport</em></a>
+        · <a href="https://commons.wikimedia.org/wiki/User:Prototyperspective" target="_blank" rel="noopener noreferrer">Prototyperspective</a>
+        · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a> (public domain dedication)
+      </p>
+    </div>
+  </header>
 
-    <header class="site-header">
-      <h1 class="mark">d<span>/</span>acc microgrants</h1>
-      <p class="tagline">An incubator for organizations building civilizational resilience.</p>
-    </header>
-
+  <main class="wrap">
     <section>
       <p class="lede">We care about the future of humanity. Transformative AI could bring extraordinary benefits—but it also creates structural risks we are not prepared for. We focus on <strong>d/acc</strong>: decentralized, defensive approaches that widen agency and reduce single points of catastrophic failure.</p>
     </section>
@@ -84,7 +105,7 @@
       <ul class="faq">
         <li class="faq-item">
           <h3>How do I apply?</h3>
-          <p>Browse the <a href="projects.html" class="text-link">project list</a>, pick a card that matches what you want to build, and use &ldquo;Apply to work on this.&rdquo; Tell us who you are, your relevant experience, and how you would approach the idea—we read every application.</p>
+          <p>Browse the <a href="projects.html" class="text-link">project list</a>, pick a card that matches what you want to build, and open the application form from &ldquo;Apply to work on this.&rdquo; You&rsquo;ll share your background, a résumé or link, and why you&rsquo;re a good fit—we read every application.</p>
         </li>
         <li class="faq-item">
           <h3>What happens if I&rsquo;m selected?</h3>
@@ -108,6 +129,6 @@
     <footer>
       <p><em>d/acc microgrants</em> — building resilience in the age of transformative AI.</p>
     </footer>
-  </div>
+  </main>
 </body>
 </html>

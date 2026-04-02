@@ -135,7 +135,7 @@ body {
 
 @media (min-width: 860px) {
   .hero-compact-grid {
-    grid-template-columns: 1fr minmax(220px, 34%);
+    grid-template-columns: 1fr minmax(280px, 44%);
     gap: clamp(2rem, 5vw, 3.5rem);
   }
 }
@@ -203,7 +203,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(220px, 32vw);
+  max-height: min(300px, 52vw);
   object-fit: cover;
   object-position: center 38%;
   border-radius: var(--radius-md);
@@ -213,13 +213,13 @@ body {
 
 @media (min-width: 860px) {
   .hero-thumb {
-    max-height: 200px;
+    max-height: min(400px, 52vh);
   }
 }
 
 @media (max-width: 859px) {
   .hero-thumb {
-    max-height: 180px;
+    max-height: min(260px, 58vw);
   }
 }
 
@@ -446,6 +446,31 @@ p:last-child {
   font-weight: 500;
 }
 
+.section-why {
+  margin-left: calc(-1 * clamp(1.25rem, 5vw, 4rem));
+  margin-right: calc(-1 * clamp(1.25rem, 5vw, 4rem));
+  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 5vw, 4rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    145deg,
+    rgba(224, 242, 254, 0.75) 0%,
+    rgba(220, 252, 231, 0.65) 48%,
+    rgba(239, 246, 255, 0.85) 100%
+  );
+  border: 1px solid rgba(0, 113, 227, 0.14);
+  box-shadow: 0 8px 32px rgba(13, 125, 77, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.section-why > h2 {
+  color: #0a5c3a;
+  margin-bottom: 0.65rem;
+}
+
+.section-why > p {
+  color: #3d4f5c;
+  max-width: 58ch;
+}
+
 ul.risks {
   list-style: none;
   margin: 1.5rem 0 0;
@@ -459,6 +484,18 @@ ul.risks li {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid var(--border);
+}
+
+.section-why ul.risks li {
+  border-bottom-color: rgba(0, 113, 227, 0.14);
+}
+
+.section-why ul.risks strong {
+  color: #134e4a;
+}
+
+.section-why ul.risks li {
+  color: #3d5348;
 }
 
 ul.risks li:first-child {

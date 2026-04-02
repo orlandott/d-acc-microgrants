@@ -1,0 +1,376 @@
+:root {
+  --bg: #0f1210;
+  --surface: #171c18;
+  --text: #e8ebe6;
+  --muted: #9aa396;
+  --accent: #7cb87a;
+  --accent-dim: rgba(124, 184, 122, 0.15);
+  --border: rgba(232, 235, 230, 0.12);
+  --max: 38rem;
+  --max-wide: 56rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: calc(var(--max) + 3rem);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.wrap--wide {
+  max-width: calc(var(--max-wide) + 3rem);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mark {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.mark a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mark a:hover {
+  color: var(--text);
+}
+
+.mark span {
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--muted);
+  font-weight: 400;
+  max-width: 28ch;
+}
+
+section {
+  margin-bottom: 2.75rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.project-area {
+  margin-bottom: 3rem;
+}
+
+.project-area:last-of-type {
+  margin-bottom: 0;
+}
+
+.project-area > p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  max-width: 42ch;
+}
+
+.project-area .goal-lead strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 100%;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.project-card p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.apply-btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.apply-btn:hover {
+  filter: brightness(1.08);
+}
+
+.apply-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+ul.risks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.risks li {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+ul.risks li:last-child {
+  margin-bottom: 0;
+}
+
+ul.risks strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+ul.risks a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+ul.risks a:hover {
+  border-bottom-color: var(--accent);
+}
+
+ul.risks a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.offer {
+  display: grid;
+  gap: 1rem;
+}
+
+.offer article {
+  padding: 1.15rem 1.25rem;
+  border-radius: 6px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(124, 184, 122, 0.25);
+}
+
+.offer h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.offer p {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+footer em {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  color: var(--text);
+}
+
+.page-intro {
+  margin-bottom: 2.5rem;
+}
+
+.page-intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 40ch;
+}
+
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+.text-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.inline-cta .text-link {
+  font-weight: 600;
+}
+
+.inline-cta {
+  margin-top: 1.25rem;
+}
+
+.faq {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faq-item {
+  margin-bottom: 1.35rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item h3 {
+  margin: 0 0 0.5rem;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.faq-item strong {
+  color: var(--text);
+  font-weight: 600;
+}

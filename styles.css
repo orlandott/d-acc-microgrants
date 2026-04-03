@@ -49,7 +49,7 @@ body {
 }
 
 .page-home-main {
-  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding-top: clamp(2rem, 5vw, 3rem);
 }
 
 .wrap--wide {
@@ -100,48 +100,78 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.site-top {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-
-.site-top-inner {
-  max-width: min(var(--max), 100% - 2rem);
-  margin: 0 auto;
-  padding: clamp(0.75rem, 1.8vw, 1rem) clamp(1.25rem, 5vw, 4rem);
-}
-
-.nav--top {
+.hero-full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
   margin-bottom: 0;
 }
 
-.hero-compact {
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 100%);
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
 }
 
-.wrap.wrap--hero {
-  padding-top: clamp(1.75rem, 4vw, 2.75rem);
-  padding-bottom: clamp(1.75rem, 4vw, 2.75rem);
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 247, 0.2) 0%,
+    rgba(245, 245, 247, 0.35) 28%,
+    rgba(245, 245, 247, 0.65) 55%,
+    rgba(245, 245, 247, 0.92) 82%,
+    var(--bg) 100%
+  );
 }
 
-.hero-compact-grid {
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 2.25rem);
-  align-items: center;
+.hero-full-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  max-width: min(var(--max), 100% - 2rem);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 5vw, 4rem) clamp(2rem, 6vh, 4rem);
 }
 
-@media (min-width: 860px) {
-  .hero-compact-grid {
-    grid-template-columns: 1fr minmax(280px, 44%);
-    gap: clamp(2rem, 5vw, 3.5rem);
-  }
+.nav--hero {
+  margin-bottom: 0;
 }
 
-.hero-compact-copy {
-  min-width: 0;
+.hero-full .nav a {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-full .nav a:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.hero-full .nav a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero-full-content {
+  margin-top: auto;
+  padding-top: clamp(2rem, 12vh, 6rem);
+  max-width: 40rem;
+}
+
+.hero-full .mark {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 2px 20px rgba(245, 245, 247, 0.8);
 }
 
 .hero-actions {
@@ -194,53 +224,6 @@ body {
   outline-offset: 3px;
 }
 
-.hero-figure {
-  margin: 0;
-  min-width: 0;
-}
-
-.hero-thumb {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: min(300px, 52vw);
-  object-fit: cover;
-  object-position: center 38%;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-}
-
-@media (min-width: 860px) {
-  .hero-thumb {
-    max-height: min(400px, 52vh);
-  }
-}
-
-@media (max-width: 859px) {
-  .hero-thumb {
-    max-height: min(260px, 58vw);
-  }
-}
-
-.hero-caption {
-  margin: 0.5rem 0 0;
-  font-size: 0.6875rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
-
-.hero-caption a {
-  color: var(--muted);
-  text-decoration: underline;
-  text-decoration-color: rgba(0, 113, 227, 0.3);
-  text-underline-offset: 2px;
-}
-
-.hero-caption a:hover {
-  color: var(--accent-blue);
-}
-
 .mark {
   font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
   font-size: clamp(3rem, 8.5vw, 4.75rem);
@@ -285,17 +268,12 @@ body {
   letter-spacing: -0.01em;
 }
 
-.mark.mark--hero {
-  font-size: clamp(2.35rem, 5.5vw, 3.35rem);
-  line-height: 1.08;
-  margin-bottom: 0.75rem;
-}
-
-.tagline.tagline--hero {
+.tagline.tagline--hero-full {
   max-width: 38rem;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2.4vw, 1.32rem);
   line-height: 1.5;
   letter-spacing: -0.015em;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 24px rgba(245, 245, 247, 0.9);
 }
 
 section {

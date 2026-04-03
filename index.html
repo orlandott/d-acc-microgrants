@@ -12,46 +12,33 @@
   <link rel="preload" as="image" href="images/hero-solarpunk-utopia.jpg" fetchpriority="high">
 </head>
 <body class="page-home">
-  <header class="site-top" role="banner">
-    <div class="site-top-inner">
-      <nav class="nav nav--top" aria-label="Primary">
+  <header class="hero-full" role="banner">
+    <img
+      class="hero-bg"
+      src="images/hero-solarpunk-utopia.jpg"
+      width="1280"
+      height="1280"
+      alt=""
+      decoding="async"
+      fetchpriority="high"
+    >
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-full-inner">
+      <nav class="nav nav--hero" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
         <a href="projects.html">Projects</a>
         <a href="apply.html">Apply</a>
       </nav>
-    </div>
-  </header>
-
-  <section class="hero-compact" aria-labelledby="hero-title">
-    <div class="wrap wrap--hero">
-      <div class="hero-compact-grid">
-        <div class="hero-compact-copy">
-          <h1 class="mark mark--hero" id="hero-title">d<span>/</span>acc microgrants</h1>
-          <p class="tagline tagline--hero">An incubator for organizations building civilizational resilience—microgrants, training, and help turning ideas into self-sustaining ventures.</p>
-          <div class="hero-actions">
-            <a class="hero-btn hero-btn--primary" href="apply.html">Apply</a>
-            <a class="hero-btn hero-btn--secondary" href="projects.html">Browse projects</a>
-          </div>
+      <div class="hero-full-content">
+        <h1 class="mark" id="hero-title">d<span>/</span>acc microgrants</h1>
+        <p class="tagline tagline--hero-full">An incubator for organizations building civilizational resilience—microgrants, training, and help turning ideas into self-sustaining ventures.</p>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn--primary" href="apply.html">Apply</a>
+          <a class="hero-btn hero-btn--secondary" href="projects.html">Browse projects</a>
         </div>
-        <figure class="hero-figure">
-          <img
-            class="hero-thumb"
-            src="images/hero-solarpunk-utopia.jpg"
-            width="640"
-            height="400"
-            alt="Solarpunk-style vision of a green city: solar panels on rooftops, trees and parks, and light rail—an aspirational sustainable future."
-            decoding="async"
-            fetchpriority="high"
-          >
-          <figcaption class="hero-caption">
-            <a href="https://commons.wikimedia.org/wiki/File:Solarpunk_utopia_with_sustainable_transport.jpg" target="_blank" rel="noopener noreferrer">Solarpunk utopia with sustainable transport</a>
-            · <a href="https://commons.wikimedia.org/wiki/User:Prototyperspective" target="_blank" rel="noopener noreferrer">Prototyperspective</a>
-            · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a>
-          </figcaption>
-        </figure>
       </div>
     </div>
-  </section>
+  </header>
 
   <main class="wrap page-home-main">
     <section>

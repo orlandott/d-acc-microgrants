@@ -5,14 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>d/acc microgrants</title>
   <meta name="description" content="Microgrants and training for people building resilience against transformative AI—an incubator for d/acc organizations.">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d11" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="d/acc microgrants">
+  <meta property="og:description" content="An incubator for organizations building civilizational resilience—microgrants, training, and help turning ideas into self-sustaining ventures.">
+  <meta property="og:image" content="images/hero-solarpunk-utopia.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" as="image" href="images/hero-solarpunk-utopia.jpg" fetchpriority="high">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
 <body class="page-home">
-  <header class="hero-full" role="banner">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-bar site-bar--auto" role="banner">
+    <div class="site-bar-inner">
+      <a class="site-bar-mark" href="index.html" aria-current="page">d<span aria-hidden="true">/</span>acc<span class="site-bar-mark-light">&nbsp;microgrants</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <div class="site-bar-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle dark mode">
+          <svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="site-cta" href="apply.html">Apply</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="hero-full">
     <img
       class="hero-bg"
       src="images/hero-solarpunk-utopia.jpg"
@@ -24,12 +52,19 @@
     >
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-full-inner">
-      <nav class="nav nav--hero" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="apply.html">Apply</a>
-      </nav>
+      <div class="hero-top">
+        <nav class="site-nav site-nav--hero" aria-label="Primary">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="apply.html">Apply</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle dark mode">
+          <svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+      </div>
       <div class="hero-full-content">
+        <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> Now accepting applications</p>
         <h1 class="mark" id="hero-title">d<span>/</span>acc microgrants</h1>
         <p class="tagline tagline--hero-full">An incubator for organizations building civilizational resilience—microgrants, training, and help turning ideas into self-sustaining ventures.</p>
         <div class="hero-actions">
@@ -37,15 +72,16 @@
           <a class="hero-btn hero-btn--secondary" href="projects.html">Browse projects</a>
         </div>
       </div>
+      <div class="hero-sentinel" data-bar-sentinel aria-hidden="true"></div>
     </div>
   </header>
 
-  <main class="wrap page-home-main">
-    <section>
+  <main class="wrap page-home-main" id="main">
+    <section data-reveal>
       <p class="lede">We care about the future of humanity. Transformative AI could bring extraordinary benefits—but it also creates structural risks we are not prepared for. We focus on <strong>d/acc</strong>: decentralized, defensive approaches that widen agency and reduce single points of catastrophic failure.</p>
     </section>
 
-    <section class="section-why" aria-labelledby="why-heading">
+    <section class="section-why" aria-labelledby="why-heading" data-reveal>
       <h2 id="why-heading">Why this matters</h2>
       <p>Serious analysis points to several pathways where advanced AI could destabilize societies or concentrate harm. We do not have to agree on every scenario to agree that prudence—and tooling—matter.</p>
       <ul class="risks">
@@ -72,12 +108,12 @@
       </ul>
     </section>
 
-    <section class="our-bet">
+    <section class="our-bet" data-reveal>
       <h2>Our bet</h2>
       <p>We assume there will be failures—of alignment, of control, of institutions. Waiting for perfect safety is not a strategy. We want to help create <em>tools, norms, and organizations</em> that bound the worst outcomes: redundancy, verification, public goods, and defenses that do not depend on a single guardian.</p>
     </section>
 
-    <section class="section-provide">
+    <section class="section-provide" data-reveal>
       <h2>What we provide</h2>
       <p class="section-sub">Funding, structured planning, and a cohort so your work can outlast a single grant cycle.</p>
       <div class="offer">
@@ -97,7 +133,7 @@
       <p class="inline-cta"><a href="projects.html" class="text-link">View open project areas →</a></p>
     </section>
 
-    <section aria-labelledby="faq-heading">
+    <section aria-labelledby="faq-heading" data-reveal>
       <h2 id="faq-heading">How it works</h2>
       <p class="faq-intro">Answers to common questions about the program.</p>
       <ul class="faq">
@@ -123,10 +159,28 @@
         </li>
       </ul>
     </section>
-
-    <footer>
-      <p><em>d/acc microgrants</em> — building resilience in the age of transformative AI.</p>
-    </footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <span class="footer-mark">d<span>/</span>acc microgrants</span>
+        <p>Building resilience in the age of transformative AI.</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="apply.html">Apply</a>
+        <a href="index.html#faq-heading">How it works</a>
+      </nav>
+    </div>
+    <p class="site-footer-fine">© <span data-year>2026</span> <em>d/acc microgrants</em> — an incubator for civilizational resilience.</p>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="main.js" defer></script>
 </body>
 </html>

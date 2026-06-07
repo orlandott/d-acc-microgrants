@@ -5,29 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — d/acc microgrants</title>
   <meta name="description" content="Project areas you can apply to work on with d/acc microgrants.">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d11" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — d/acc microgrants">
+  <meta property="og:description" content="Open directions we want to support, across information, cyber, bio, infrastructure, and governance defense.">
+  <meta property="og:image" content="images/hero-solarpunk-utopia.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 </head>
-<body>
-  <div class="wrap wrap--wide">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="projects.html" aria-current="page">Projects</a>
-      <a href="apply.html">Apply</a>
-    </nav>
+<body class="page-projects">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
+  <header class="site-bar" role="banner">
+    <div class="site-bar-inner">
+      <a class="site-bar-mark" href="index.html">d<span aria-hidden="true">/</span>acc<span class="site-bar-mark-light">&nbsp;microgrants</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+      </nav>
+      <div class="site-bar-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle dark mode">
+          <svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="site-cta" href="apply.html">Apply</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap wrap--wide" id="main">
+    <div class="page-head">
       <h1 class="mark"><a href="index.html">d<span>/</span>acc microgrants</a></h1>
       <p class="tagline">Project areas open for applications.</p>
-    </header>
+    </div>
 
     <div class="page-intro">
       <p>Open directions we want to support. Choose a project that fits your skills and apply—we will follow up.</p>
     </div>
 
-    <section class="project-area" id="information-defense" aria-labelledby="heading-i">
+    <div class="projects-toolbar">
+      <div class="toolbar-row">
+        <div class="proj-search">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="project-search" type="search" placeholder="Search 30 projects…" aria-label="Search projects" autocomplete="off">
+          <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <span class="result-count" id="result-count" aria-live="polite"></span>
+      </div>
+      <nav class="section-nav" aria-label="Project categories">
+        <a href="#information-defense">Information defense</a>
+        <a href="#cyber-defense">Cyber &amp; AI resilience</a>
+        <a href="#biosecurity">Biosecurity &amp; health</a>
+        <a href="#physical-infrastructure">Physical &amp; infrastructure</a>
+        <a href="#governance-economic">Governance &amp; economic</a>
+      </nav>
+    </div>
+
+    <section class="project-area" id="information-defense" aria-labelledby="heading-i" data-reveal>
       <h2 id="heading-i">I. Information defense (epistemic resilience)</h2>
       <p class="goal-lead"><strong>Goal:</strong> Making it easier to verify truth than to spread lies.</p>
       <div class="card-grid">
@@ -64,7 +106,7 @@
       </div>
     </section>
 
-    <section class="project-area" id="cyber-defense" aria-labelledby="heading-ii">
+    <section class="project-area" id="cyber-defense" aria-labelledby="heading-ii" data-reveal>
       <h2 id="heading-ii">II. Cyber-defense &amp; AI resilience</h2>
       <p class="goal-lead"><strong>Goal:</strong> Making data harder to steal and AI harder to weaponize.</p>
       <div class="card-grid">
@@ -101,7 +143,7 @@
       </div>
     </section>
 
-    <section class="project-area" id="biosecurity" aria-labelledby="heading-iii">
+    <section class="project-area" id="biosecurity" aria-labelledby="heading-iii" data-reveal>
       <h2 id="heading-iii">III. Biosecurity &amp; health defense</h2>
       <p class="goal-lead"><strong>Goal:</strong> Detecting and neutralizing pathogens before they spread.</p>
       <div class="card-grid">
@@ -138,7 +180,7 @@
       </div>
     </section>
 
-    <section class="project-area" id="physical-infrastructure" aria-labelledby="heading-iv">
+    <section class="project-area" id="physical-infrastructure" aria-labelledby="heading-iv" data-reveal>
       <h2 id="heading-iv">IV. Physical &amp; infrastructure resilience</h2>
       <p class="goal-lead"><strong>Goal:</strong> Making communities hard to kill through decentralization.</p>
       <div class="card-grid">
@@ -175,7 +217,7 @@
       </div>
     </section>
 
-    <section class="project-area" id="governance-economic" aria-labelledby="heading-v">
+    <section class="project-area" id="governance-economic" aria-labelledby="heading-v" data-reveal>
       <h2 id="heading-v">V. Governance &amp; economic defense</h2>
       <p class="goal-lead"><strong>Goal:</strong> Building systems that are democratic and resistant to capture.</p>
       <div class="card-grid">
@@ -212,6 +254,10 @@
       </div>
     </section>
 
+    <div class="no-results" id="no-results" hidden>
+      <p>No projects match your search. <strong>Try a different keyword</strong>, or <a href="apply.html?project=Proposal%3A%20d%2Facc%20approach%20to%20an%20unlisted%20threat%20scenario" class="text-link">propose your own idea</a>.</p>
+    </div>
+
     <section class="projects-open-call" aria-labelledby="open-call-heading">
       <h2 id="open-call-heading">Don&rsquo;t see your scenario?</h2>
       <p>If you have a proposed organization—or a concrete idea for how <strong>d/acc</strong> technology could help address a threat scenario we haven&rsquo;t listed—message us. We read every submission.</p>
@@ -219,10 +265,28 @@
         <a class="apply-btn" href="apply.html?project=Proposal%3A%20d%2Facc%20approach%20to%20an%20unlisted%20threat%20scenario">Propose an idea</a>
       </p>
     </section>
+  </main>
 
-    <footer>
-      <p><em>d/acc microgrants</em> — <a href="index.html" class="text-link">Back to home</a></p>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <span class="footer-mark">d<span>/</span>acc microgrants</span>
+        <p>Building resilience in the age of transformative AI.</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="apply.html">Apply</a>
+        <a href="index.html#faq-heading">How it works</a>
+      </nav>
+    </div>
+    <p class="site-footer-fine">© <span data-year>2026</span> <em>d/acc microgrants</em> — an incubator for civilizational resilience.</p>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="main.js" defer></script>
 </body>
 </html>

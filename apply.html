@@ -5,27 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apply — d/acc microgrants</title>
   <meta name="description" content="Apply to work on a d/acc microgrants project.">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d11" media="(prefers-color-scheme: dark)">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
   <!-- Form delivery: replace YOUR_EMAIL with the inbox that should receive applications (FormSubmit.co will ask you to confirm it once). -->
 </head>
-<body>
-  <div class="wrap wrap--narrow">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="apply.html" aria-current="page">Apply</a>
-    </nav>
+<body class="page-apply">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
+  <header class="site-bar" role="banner">
+    <div class="site-bar-inner">
+      <a class="site-bar-mark" href="index.html">d<span aria-hidden="true">/</span>acc<span class="site-bar-mark-light">&nbsp;microgrants</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <div class="site-bar-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle dark mode">
+          <svg class="ti ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="ti ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="site-cta" href="apply.html" aria-current="page">Apply</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap wrap--narrow" id="main">
+    <div class="page-head">
       <h1 class="mark"><a href="index.html">d<span>/</span>acc microgrants</a></h1>
       <p class="tagline">Application</p>
-    </header>
+    </div>
 
-    <p class="apply-lead">You are applying to work on:</p>
-    <p class="apply-project" id="project-display">Loading…</p>
+    <p class="apply-lead">You are applying to work on</p>
+    <p class="apply-project"><span class="apply-project-chip" id="project-display">Loading…</span></p>
 
     <form
       class="apply-form"
@@ -38,6 +56,8 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
+      <p class="form-section-label">About you</p>
+
       <div class="form-field">
         <label class="form-label" for="field-name">Full name <span class="form-req">*</span></label>
         <input class="form-input" type="text" name="name" id="field-name" required autocomplete="name">
@@ -47,6 +67,8 @@
         <label class="form-label" for="field-email">Email <span class="form-req">*</span></label>
         <input class="form-input" type="email" name="email" id="field-email" required autocomplete="email">
       </div>
+
+      <p class="form-section-label">Your application</p>
 
       <div class="form-field">
         <label class="form-label" for="field-project">Project <span class="form-req">*</span></label>
@@ -85,11 +107,23 @@
         <p class="form-footnote">By submitting, you agree we may contact you about this application. We do not sell your data.</p>
       </div>
     </form>
+  </main>
 
-    <footer>
-      <p><em>d/acc microgrants</em> — <a href="projects.html" class="text-link">Back to projects</a></p>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <span class="footer-mark">d<span>/</span>acc microgrants</span>
+        <p>Building resilience in the age of transformative AI.</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="apply.html">Apply</a>
+        <a href="index.html#faq-heading">How it works</a>
+      </nav>
+    </div>
+    <p class="site-footer-fine">© <span data-year>2026</span> <em>d/acc microgrants</em> — an incubator for civilizational resilience.</p>
+  </footer>
 
   <script>
     (function () {
@@ -114,5 +148,6 @@
       next.value = new URL("thank-you.html", window.location.href).href;
     })();
   </script>
+  <script src="main.js" defer></script>
 </body>
 </html>

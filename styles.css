@@ -1509,15 +1509,6 @@ ul.risks a:focus-visible {
   color: var(--text);
 }
 
-/* Legacy footer (kept for any inline footers) */
-footer.legacy {
-  margin-top: clamp(3.5rem, 7vw, 5.5rem);
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
-
 /* ---------- Back to top ---------- */
 .to-top {
   position: fixed;
@@ -1563,15 +1554,17 @@ footer.legacy {
   height: 1.25rem;
 }
 
-/* ---------- Scroll reveal ---------- */
-[data-reveal] {
+/* ---------- Scroll reveal ----------
+   Gated on html.js (added by the head script) so that without JavaScript the
+   content is simply visible — never hidden behind an animation that can't run. */
+html.js [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   will-change: opacity, transform;
 }
 
-[data-reveal].is-in {
+html.js [data-reveal].is-in {
   opacity: 1;
   transform: none;
 }
@@ -1587,7 +1580,7 @@ footer.legacy {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
-  [data-reveal] {
+  html.js [data-reveal] {
     opacity: 1;
     transform: none;
   }
@@ -1597,10 +1590,23 @@ footer.legacy {
   .site-bar-mark-light {
     display: none;
   }
+  .site-bar-inner {
+    gap: 0.5rem;
+  }
+  .site-nav a {
+    padding: 0.4rem 0.7rem;
+  }
   .site-cta {
-    display: none;
+    padding: 0.42rem 0.85rem;
   }
   .project-area {
     scroll-margin-top: calc(var(--bar-h) + 9rem);
+  }
+}
+
+@media (max-width: 380px) {
+  /* Reclaim space on very narrow screens — cards and footer still link to Apply. */
+  .site-cta {
+    display: none;
   }
 }

@@ -51,14 +51,17 @@
 
 
   /* ---------- Auto-revealing header (home page) ----------
-     On the home page the sticky bar stays hidden until the hero is scrolled
-     past, so it never competes with the full-bleed hero. */
+     On the home page the bar stays hidden until the hero is scrolled past, so
+     it never competes with the full-bleed hero (or the mockup notice above it).
+     Reveal only once the sentinel has scrolled ABOVE the viewport top — testing
+     `top < 0` rather than `!isIntersecting`, which is also true when the notice
+     pushes the sentinel below the fold and would wrongly show the bar at top. */
   var autoBar = document.querySelector(".site-bar--auto");
   var sentinel = document.querySelector("[data-bar-sentinel]");
   if (autoBar) {
     if (sentinel && "IntersectionObserver" in window) {
       var barObserver = new IntersectionObserver(function (entries) {
-        autoBar.classList.toggle("is-visible", !entries[0].isIntersecting);
+        autoBar.classList.toggle("is-visible", entries[0].boundingClientRect.top < 0);
       }, { rootMargin: "0px" });
       barObserver.observe(sentinel);
     } else {

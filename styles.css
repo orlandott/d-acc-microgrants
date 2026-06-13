@@ -160,6 +160,7 @@ html.promo-hidden .promo {
 
 .promo {
   position: relative;
+  z-index: 130;
   display: flex;
   align-items: center;
   justify-content: center;

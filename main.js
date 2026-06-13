@@ -37,15 +37,6 @@
     });
   });
 
-  // Follow the OS preference until the visitor has made an explicit choice.
-  var media = window.matchMedia("(prefers-color-scheme: dark)");
-  var onMediaChange = function (e) {
-    var stored = null;
-    try { stored = localStorage.getItem("theme"); } catch (err) {}
-    if (!stored) setTheme(e.matches ? "dark" : "light", false);
-  };
-  if (media.addEventListener) media.addEventListener("change", onMediaChange);
-  else if (media.addListener) media.addListener(onMediaChange);
 
   /* ---------- Auto-revealing header (home page) ----------
      On the home page the sticky bar stays hidden until the hero is scrolled

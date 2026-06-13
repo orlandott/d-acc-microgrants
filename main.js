@@ -38,6 +38,18 @@
   });
 
 
+  /* ---------- Dismissible mockup notice ----------
+     This site is a design mockup; a banner says so. The inline <head> script
+     hides it pre-paint when previously dismissed, so here we only wire close. */
+  var promoDismiss = document.querySelector("[data-promo-dismiss]");
+  if (promoDismiss) {
+    promoDismiss.addEventListener("click", function () {
+      root.classList.add("promo-hidden");
+      try { localStorage.setItem("mockupNoticeDismissed", "1"); } catch (e) {}
+    });
+  }
+
+
   /* ---------- Auto-revealing header (home page) ----------
      On the home page the sticky bar stays hidden until the hero is scrolled
      past, so it never competes with the full-bleed hero. */

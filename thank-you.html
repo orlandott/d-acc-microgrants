@@ -11,10 +11,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.setAttribute('data-theme',t==='dark'?'dark':'light');if(localStorage.getItem('mockupNoticeDismissed')==='1')d.classList.add('promo-hidden');}catch(e){d.setAttribute('data-theme','light');}})();</script>
 </head>
 <body class="page-thanks">
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Mockup notice -->
+  <div class="promo" role="note">
+    <p class="promo__text">
+      <span class="promo__badge">Mockup</span>
+      This is a <strong>design concept</strong>, not a real organization — nothing here is a live service or funding offer.
+    </p>
+    <button class="promo__dismiss" type="button" aria-label="Dismiss notice" data-promo-dismiss>&times;</button>
+  </div>
 
   <header class="site-bar" role="banner">
     <div class="site-bar-inner">

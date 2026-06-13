@@ -17,10 +17,19 @@
        The first real submission triggers a one-time confirmation email you must click to activate.
        To keep the address out of the public HTML, you can later swap it for the hashed endpoint
        FormSubmit gives you (https://formsubmit.co/<your-random-token>). -->
-  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){d.setAttribute('data-theme','light');}})();</script>
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.setAttribute('data-theme',t==='dark'?'dark':'light');if(localStorage.getItem('mockupNoticeDismissed')==='1')d.classList.add('promo-hidden');}catch(e){d.setAttribute('data-theme','light');}})();</script>
 </head>
 <body class="page-apply">
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Mockup notice -->
+  <div class="promo" role="note">
+    <p class="promo__text">
+      <span class="promo__badge">Mockup</span>
+      This is a <strong>design concept</strong>, not a real organization — nothing here is a live service or funding offer.
+    </p>
+    <button class="promo__dismiss" type="button" aria-label="Dismiss notice" data-promo-dismiss>&times;</button>
+  </div>
 
   <header class="site-bar" role="banner">
     <div class="site-bar-inner">

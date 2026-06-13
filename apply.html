@@ -13,7 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Form delivery: replace YOUR_EMAIL with the inbox that should receive applications (FormSubmit.co will ask you to confirm it once). -->
+  <!-- Form delivery: applications are emailed to contact@orlandotorres.org via FormSubmit.co.
+       The first real submission triggers a one-time confirmation email you must click to activate.
+       To keep the address out of the public HTML, you can later swap it for the hashed endpoint
+       FormSubmit gives you (https://formsubmit.co/<your-random-token>). -->
   <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');d.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){d.setAttribute('data-theme','light');}})();</script>
 </head>
 <body class="page-apply">
@@ -47,7 +50,7 @@
 
     <form
       class="apply-form"
-      action="https://formsubmit.co/YOUR_EMAIL@example.com"
+      action="https://formsubmit.co/contact@orlandotorres.org"
       method="post"
       enctype="multipart/form-data"
     >
